@@ -11,10 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
 
@@ -294,9 +291,6 @@ public class App
                 List<String> make_model = (List<String>) objectInputStream_again.readObject();   //0= make 1=Model
                 List<SharedCar> cars = dbControllerCar.searchByMakeModel(make_model);
 
-                /*if(cars == null){
-                    System.out.println("null" );
-                }*/
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
                 objectOutputStream.writeObject(cars);
                 objectOutputStream.flush();
